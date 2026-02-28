@@ -394,6 +394,115 @@ const questionBank = [
     answerIndex: 1,
     explanation: "Correct: administrative regulations sit below the Constitution, international/EU norms, and statutes and must comply with all of them. 'Only local custom' understates the hierarchy—custom has a minimal role in French public law. 'Only circulars' reverses the hierarchy, since circulars themselves are subordinate to regulations. 'Only the Prime Minister's speeches' has no legal basis whatsoever.",
     theme: "Norm Hierarchy & Review"
+  },
+  // ── New batch: State Organization ──
+  {
+    prompt: "Article 1 of the Constitution declares France to be a Republic that is:",
+    choices: ["Federal, monarchic, and theocratic", "Indivisible, laïque, democratic, and social", "Decentralized, presidential, and bicameral", "Unitary, aristocratic, and secular"],
+    answerIndex: 1,
+    explanation: "Correct: Article 1 describes France as an 'indivisible, laïque, democratic and social Republic.' 'Federal, monarchic, and theocratic' contradicts every aspect of the French Republic. 'Decentralized, presidential, and bicameral' mixes structural features with constitutional identity. 'Unitary, aristocratic, and secular' is partly right (secular/unitary) but 'aristocratic' is incompatible with republicanism.",
+    theme: "State Organization"
+  },
+  {
+    prompt: "Under Article 72, the free administration of local authorities (collectivités territoriales) is exercised by:",
+    choices: ["Agents appointed by the Prime Minister", "Elected councils under conditions set by statute", "The Prefect acting alone", "The Constitutional Council sitting locally"],
+    answerIndex: 1,
+    explanation: "Correct: Article 72 provides that local authorities are administered by elected councils, within conditions defined by law. Agents appointed by the Prime Minister describes deconcentrated services, not decentralized governance. The Prefect represents the State locally but does not administer collectivités. The Constitutional Council has no local administrative role.",
+    theme: "State Organization"
+  },
+  {
+    prompt: "Which body serves as a consultative assembly advising the Government on economic, social, and environmental matters?",
+    choices: ["The Senate", "The CESE (Economic, Social and Environmental Council)", "The Court of Accounts", "The National Assembly Finance Committee"],
+    answerIndex: 1,
+    explanation: "Correct: Articles 69-71 establish the CESE as the constitutionally mandated consultative body for economic, social, and environmental policy. The Senate is a legislative chamber, not a purely consultative body. The Court of Accounts (Cour des comptes) audits public finances. The National Assembly Finance Committee is a parliamentary committee, not an independent advisory institution.",
+    theme: "State Organization"
+  },
+  {
+    prompt: "The Prefect in French administration is primarily the representative of:",
+    choices: ["The municipality only", "The State in the département/region", "The Constitutional Council", "Foreign diplomatic missions"],
+    answerIndex: 1,
+    explanation: "Correct: the Prefect represents the State and each Government member in the département or region (Art. 72, loi 1982). The municipality has its own elected mayor. The Constitutional Council has no local representative. Diplomatic missions are headed by ambassadors, not prefects.",
+    theme: "State Organization"
+  },
+  // ── New batch: Institutions & Powers ──
+  {
+    prompt: "Under Article 23, a Government minister may not simultaneously hold:",
+    choices: ["Foreign nationality", "A parliamentary seat", "A university degree", "A local elective office"],
+    answerIndex: 1,
+    explanation: "Correct: Article 23 establishes incompatibility between Government membership and a parliamentary mandate — a minister must leave their parliamentary seat. Foreign nationality is not barred by Article 23. A university degree is irrelevant. Holding a local office (e.g. mayor), while debated politically, is not the specific incompatibility stated in Article 23.",
+    theme: "Institutions & Powers"
+  },
+  {
+    prompt: "In the legislative process, bills (projets de loi) are introduced by:",
+    choices: ["Individual citizens directly", "The Prime Minister on behalf of the Government", "The Constitutional Council", "The Prefect"],
+    answerIndex: 1,
+    explanation: "Correct: under Article 39, the Prime Minister has initiative for Government bills (projets de loi), while MPs file propositions de loi. Individual citizens cannot directly introduce bills into Parliament. The Constitutional Council and the Prefect have no legislative initiative.",
+    theme: "Institutions & Powers"
+  },
+  {
+    prompt: "In case of disagreement between the two chambers, which assembly has the final say when the Government gives it the last word?",
+    choices: ["The Senate always prevails", "The National Assembly under Article 45", "The Tribunal des conflits", "The Constitutional Council"],
+    answerIndex: 1,
+    explanation: "Correct: Article 45 allows the Government to ask the National Assembly for a final reading and definitive vote after a commission mixte paritaire fails, giving the lower house the last word. The Senate never has the final say in ordinary legislation. The Tribunal des conflits resolves jurisdictional disputes, not legislative ones. The Constitutional Council reviews laws but does not adopt them.",
+    theme: "Institutions & Powers"
+  },
+  {
+    prompt: "The Conseil supérieur de la magistrature (CSM) primarily:",
+    choices: ["Adopts criminal statutes", "Advises on and participates in the appointment and discipline of judges", "Manages local government finances", "Commands the armed forces"],
+    answerIndex: 1,
+    explanation: "Correct: Articles 64-65 establish the CSM as the body ensuring judicial independence, with roles in appointing and disciplining judges (magistrats du siège and du parquet). Adopting criminal statutes is Parliament's role. Managing local finances is the responsibility of local authorities and the Cour des comptes. Commanding the armed forces belongs to the President (Art. 15).",
+    theme: "Institutions & Powers"
+  },
+  // ── New batch: Norm Hierarchy & Review ──
+  {
+    prompt: "Organic laws (lois organiques) occupy which position in the normative hierarchy?",
+    choices: ["Below ordinary statutes", "Between the Constitution and ordinary statutes", "Above the Constitution", "At the same level as administrative regulations"],
+    answerIndex: 1,
+    explanation: "Correct: organic laws rank below the Constitution but above ordinary statutes. They require a special adoption procedure (Art. 46) and mandatory review by the Constitutional Council. 'Below ordinary statutes' reverses their position. 'Above the Constitution' contradicts constitutional supremacy. 'At the same level as administrative regulations' drastically understates their rank.",
+    theme: "Norm Hierarchy & Review"
+  },
+  {
+    prompt: "The principes fondamentaux reconnus par les lois de la République (PFRLR) derive from:",
+    choices: ["EU regulations only", "Republican legislative tradition, identified by the Constitutional Council", "Presidential decrees from the Third Republic", "International humanitarian law exclusively"],
+    answerIndex: 1,
+    explanation: "Correct: PFRLR are unwritten principles extracted by the Constitutional Council from the republican legislative tradition (pre-1946 laws reflecting continuous practice). EU regulations are a distinct EU-law source. Presidential decrees are not legislative acts. International humanitarian law, while important, is not the source of PFRLR.",
+    theme: "Norm Hierarchy & Review"
+  },
+  {
+    prompt: "What distinguished a priori from a posteriori constitutional review in France?",
+    choices: ["A priori occurs before promulgation (Art. 61), a posteriori occurs during litigation via QPC (Art. 61-1)", "Both can only be initiated by the President", "A posteriori review was abolished in 2010", "A priori review applies only to treaties"],
+    answerIndex: 0,
+    explanation: "Correct: a priori review (Article 61) takes place between Parliament's vote and the President's promulgation, while a posteriori review (QPC, Article 61-1) allows litigants to challenge a law already in force during court proceedings. Both are not limited to the President — 60 MPs/senators can trigger a priori review. A posteriori review was created (not abolished) in 2008/2010. A priori review applies to statutes as well, not only treaties.",
+    theme: "Constitutional Procedures & Review"
+  },
+  // ── New batch: Conseil d'État Jurisprudence ──
+  {
+    prompt: "In CE, 2011, Danthony, what principle was established regarding procedural defects?",
+    choices: ["All procedural defects lead to annulment", "A procedural defect leads to annulment only if it affected the decision or deprived a party of a guarantee", "Procedural defects are never relevant", "Only the Prefect can invoke procedural defects"],
+    answerIndex: 1,
+    explanation: "Correct: Danthony (2011) held that a procedural irregularity only justifies annulment if it was liable to affect the decision's substance or deprived an interested party of a procedural guarantee. 'All defects lead to annulment' was the overly strict pre-Danthony approach. 'Never relevant' goes too far in the other direction. The Prefect has no monopoly on raising procedural arguments.",
+    theme: "Conseil d'État Jurisprudence"
+  },
+  {
+    prompt: "In CE, 2003, GISTI, the Conseil d'État recognized justiciability of which type of act?",
+    choices: ["Only individual ministerial decisions", "Circulars with regulatory (imperative) content applicable to foreigners", "Exclusively international treaties", "Only decrees taken in Council of Ministers"],
+    answerIndex: 1,
+    explanation: "Correct: in GISTI (2003), the Conseil d'État extended review to circulars that impose new norms on foreigners, consistent with the Duvignères imperative-character test. 'Only individual decisions' ignores the broader reviewability of normative texts. 'Exclusively international treaties' is too narrow. 'Only decrees taken in Council of Ministers' limits review incorrectly.",
+    theme: "Conseil d'État Jurisprudence"
+  },
+  {
+    prompt: "In CE, 2014, Département de Tarn-et-Garonne, what was reformed for third-party challenges to administrative contracts?",
+    choices: ["Third parties lost all rights to challenge contracts", "Third parties gained direct access to the full-jurisdiction (plein contentieux) judge to contest a contract", "Contracts became immune from all judicial review", "Only the contracting parties may challenge the contract"],
+    answerIndex: 1,
+    explanation: "Correct: Département de Tarn-et-Garonne (2014) granted affected third parties direct standing before the full-jurisdiction contract judge, replacing the old two-path system (recours Tropic for competitors, recours pour excès de pouvoir for others). 'Lost all rights' and 'contracts became immune' are the opposite. 'Only contracting parties' ignores this very ruling expanding standing.",
+    theme: "Conseil d'État Jurisprudence"
+  },
+  {
+    prompt: "In CE, 1978, GISTI (Ministre de l'intérieur c. Cohn-Bendit), the Conseil d'État initially held regarding EU directives that:",
+    choices: ["Directives have full direct effect in all circumstances", "Individuals cannot directly invoke an unimplemented directive against an individual administrative decision", "Directives are irrelevant in French law", "Directives automatically repeal all contrary statutes"],
+    answerIndex: 1,
+    explanation: "Correct: in the classic Cohn-Bendit ruling (1978), the Conseil d'État refused to grant direct effect to EU directives against individual administrative decisions, though this stance was later largely reversed. 'Full direct effect in all circumstances' was the position of the CJEU, not the CE. 'Irrelevant in French law' overstates the refusal. 'Automatically repeal statutes' goes far beyond even the most integrationist view.",
+    theme: "Conseil d'État Jurisprudence"
   }
 ];
 
@@ -486,6 +595,14 @@ const BADGE_DEFS = [
   { id: "professor_xces",          icon: "🧬", name: "Professor X-cès de Pouvoir",         desc: "Score 100% on a Justice Organization quiz.",            check: (s) => s.perfectByTheme["Justice Organization"] },
   { id: "wolverine_jurisprudence", icon: "🐺", name: "Wolverine of Jurisprudence",         desc: "Come back from a 0/5 to a 5/5 across two quizzes.",     check: (s) => s.wolverineComeback },
   { id: "xmen_assembly",           icon: "🦸", name: "X-Men: Assemblée Nationale",         desc: "Answer 150 questions correctly (total).",               check: (s) => s.totalCorrect >= 150 },
+  // ── Extra round ──
+  { id: "rosebud_wisdom",          icon: "🌹", name: "Rosebud of Wisdom",                  desc: "Answer 75 questions correctly (total).",                check: (s) => s.totalCorrect >= 75 },
+  { id: "droit_side_force",        icon: "🌌", name: "Droit Side of the Force",             desc: "Score 100% five times in a row.",                       check: (s) => s.consecutivePerfects >= 5 },
+  { id: "succession_crisis",       icon: "👑", name: "Succession Crisis Averted",           desc: "Reach a 21-day streak.",                                check: (s) => s.streak >= 21 },
+  { id: "hyrule_of_law",           icon: "🏰", name: "Hyrule of Law",                      desc: "Complete 40 quizzes.",                                  check: (s) => s.totalAttempts >= 40 },
+  { id: "normandy_sr_droit",       icon: "🛸", name: "Normandy SR-Droit",                  desc: "Answer 300 questions correctly (total).",               check: (s) => s.totalCorrect >= 300 },
+  { id: "pip_boy_perfect",         icon: "📟", name: "Pip-Boy Perfect Score",               desc: "Score 100% on 4 different themes.",                     check: (s) => s.perfectThemeCount >= 4 },
+  { id: "fade_to_droit",           icon: "🌀", name: "Fade to Droit",                      desc: "Complete a quiz after midnight.",                        check: (s) => s.afterMidnight },
 ];
 
 /* ── Spaced Repetition Storage ─────────────────────────── */
@@ -695,6 +812,10 @@ function computeBadgeStats() {
     }
   }
 
+  // afterMidnight: current quiz completed between midnight and 5 AM
+  const currentHour = new Date().getHours();
+  const afterMidnight = currentHour >= 0 && currentHour < 5;
+
   return {
     totalAttempts, totalCorrect, perfectQuizzes,
     consecutivePerfects: maxConsecutive,
@@ -702,7 +823,7 @@ function computeBadgeStats() {
     perfectByTheme, improved, fiveInARow,
     quizzesToday, allThemesAbove60, allThemesTried,
     themedQuizDone, perfectThemeCount, above80Count,
-    wolverineComeback
+    wolverineComeback, afterMidnight
   };
 }
 
