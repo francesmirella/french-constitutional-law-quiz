@@ -231,8 +231,14 @@ body {
 }
 
 .badge-card.locked {
-  opacity: 0.5;
+  opacity: 0.55;
   filter: grayscale(0.7);
+}
+
+.badge-card.locked .badge-name {
+  filter: blur(5px);
+  user-select: none;
+  pointer-events: none;
 }
 
 .badge-card .badge-icon {

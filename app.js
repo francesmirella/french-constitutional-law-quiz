@@ -439,21 +439,53 @@ let newlyUnlockedBadges = [];
 
 /* ── Badge Definitions ─────────────────────────────────── */
 const BADGE_DEFS = [
-  { id: "bloc_party",             icon: "🎉", name: "Bloc Party",                       desc: "Complete your first quiz.",                            check: (s) => s.totalAttempts >= 1 },
-  { id: "separation_of_powers_up",icon: "⚡", name: "Separation of Powers-Up",           desc: "Score 100 % on a quiz.",                               check: (s) => s.perfectQuizzes >= 1 },
-  { id: "fifth_republic_strikes", icon: "🏛️", name: "The Fifth Republic Strikes Back",   desc: "Complete 5 quizzes.",                                  check: (s) => s.totalAttempts >= 5 },
-  { id: "dame_lamotte_it_be",     icon: "⚖️", name: "Dame Lamotte It Be",                desc: "Complete 10 quizzes.",                                 check: (s) => s.totalAttempts >= 10 },
-  { id: "conseil_detat_of_mind",  icon: "🧠", name: "Conseil d'État of Mind",            desc: "Score 100 % on a Conseil d'État quiz.",                check: (s) => s.perfectByTheme["Conseil d'État Jurisprudence"] },
-  { id: "motion_of_ensure",       icon: "🔥", name: "Motion of Ensure",                  desc: "Reach a 3-day streak.",                                check: (s) => s.streak >= 3 },
-  { id: "ordonnance_in_court",    icon: "📜", name: "Ordonnance in the Court",            desc: "Complete 25 quizzes.",                                 check: (s) => s.totalAttempts >= 25 },
-  { id: "habeas_brainpus",        icon: "💡", name: "Habeas Brainpus",                   desc: "Answer 100 questions correctly (total).",              check: (s) => s.totalCorrect >= 100 },
-  { id: "the_constitutionalist",  icon: "👑", name: "The Constitutionalist",             desc: "Score 100 % three times in a row.",                    check: (s) => s.consecutivePerfects >= 3 },
-  { id: "nicolo_deon",            icon: "🌍", name: "Nicolo-deon",                       desc: "Answer 50 questions correctly (total).",               check: (s) => s.totalCorrect >= 50 },
-  { id: "benjamin_button",        icon: "🔄", name: "Benjamin Button",                   desc: "Improve on your previous score.",                      check: (s) => s.improved },
-  { id: "septennat_survivor",     icon: "🗓️", name: "Septennat Survivor",                desc: "Reach a 7-day streak.",                                check: (s) => s.streak >= 7 },
-  { id: "full_quorum",            icon: "🏆", name: "Full Quorum",                       desc: "Complete 50 quizzes.",                                 check: (s) => s.totalAttempts >= 50 },
-  { id: "libertes_fondamentales",icon: "🗽", name: "Libertés Fondamen-totally Nailed It",desc: "Score 100 % on a Public Freedoms quiz.",               check: (s) => s.perfectByTheme["Public Freedoms"] },
-  { id: "article_16_emergency",  icon: "🚨", name: "Article 16 Emergency Ace",          desc: "Get 5 correct answers in a row within a quiz.",        check: (s) => s.fiveInARow },
+  // ── Core progression ──
+  { id: "bloc_party",              icon: "🎉", name: "Bloc Party",                        desc: "Complete your first quiz.",                            check: (s) => s.totalAttempts >= 1 },
+  { id: "separation_of_powers_up", icon: "⚡", name: "Separation of Powers-Up",            desc: "Score 100% on a quiz.",                                check: (s) => s.perfectQuizzes >= 1 },
+  { id: "fifth_republic_strikes",  icon: "🏛️", name: "The Fifth Republic Strikes Back",    desc: "Complete 5 quizzes.",                                   check: (s) => s.totalAttempts >= 5 },
+  { id: "dame_lamotte_it_be",      icon: "⚖️", name: "Dame Lamotte It Be",                 desc: "Complete 10 quizzes.",                                  check: (s) => s.totalAttempts >= 10 },
+  { id: "conseil_detat_of_mind",   icon: "🧠", name: "Conseil d'État of Mind",             desc: "Score 100% on a Conseil d'État quiz.",                  check: (s) => s.perfectByTheme["Conseil d'État Jurisprudence"] },
+  { id: "motion_of_ensure",        icon: "🔥", name: "Motion of Ensure",                   desc: "Reach a 3-day streak.",                                 check: (s) => s.streak >= 3 },
+  { id: "ordonnance_in_court",     icon: "📜", name: "Ordonnance in the Court",             desc: "Complete 25 quizzes.",                                  check: (s) => s.totalAttempts >= 25 },
+  { id: "habeas_brainpus",         icon: "💡", name: "Habeas Brainpus",                    desc: "Answer 100 questions correctly (total).",               check: (s) => s.totalCorrect >= 100 },
+  { id: "the_constitutionalist",   icon: "👑", name: "The Constitutionalist",              desc: "Score 100% three times in a row.",                      check: (s) => s.consecutivePerfects >= 3 },
+  { id: "nicolo_deon",             icon: "🌍", name: "Nicolo-deon",                        desc: "Answer 50 questions correctly (total).",                check: (s) => s.totalCorrect >= 50 },
+  { id: "benjamin_button",         icon: "🔄", name: "Benjamin Button",                    desc: "Improve on your previous score.",                       check: (s) => s.improved },
+  { id: "septennat_survivor",      icon: "🗓️", name: "Septennat Survivor",                 desc: "Reach a 7-day streak.",                                 check: (s) => s.streak >= 7 },
+  { id: "full_quorum",             icon: "🏆", name: "Full Quorum",                        desc: "Complete 50 quizzes.",                                  check: (s) => s.totalAttempts >= 50 },
+  { id: "libertes_fondamentales",  icon: "🗽", name: "Libertés Fondamen-totally Nailed It", desc: "Score 100% on a Public Freedoms quiz.",                 check: (s) => s.perfectByTheme["Public Freedoms"] },
+  { id: "article_16_emergency",    icon: "🚨", name: "Article 16 Emergency Ace",           desc: "Get 5 correct answers in a row within a quiz.",         check: (s) => s.fiveInARow },
+  // ── The Sims ──
+  { id: "motherlode",              icon: "💎", name: "Motherlode of Knowledge",            desc: "Answer 200 questions correctly (total).",               check: (s) => s.totalCorrect >= 200 },
+  { id: "sul_sul_scholar",         icon: "🏠", name: "Sul Sul, Scholar!",                  desc: "Complete 3 quizzes in one day.",                        check: (s) => s.quizzesToday >= 3 },
+  { id: "needs_fulfilled",         icon: "💚", name: "All Needs: Green",                   desc: "Score above 60% on every theme at least once.",         check: (s) => s.allThemesAbove60 },
+  // ── Star Wars ──
+  { id: "i_am_the_senate",         icon: "⚔️", name: "I AM the Senate",                    desc: "Score 100% on an Institutions & Powers quiz.",          check: (s) => s.perfectByTheme["Institutions & Powers"] },
+  { id: "may_the_article",         icon: "✨", name: "May the Article Be With You",        desc: "Complete 15 quizzes.",                                  check: (s) => s.totalAttempts >= 15 },
+  { id: "this_is_the_legal_way",   icon: "🪖", name: "This Is the (Legal) Way",            desc: "Score 100% five times (total).",                        check: (s) => s.perfectQuizzes >= 5 },
+  // ── Dragon Age ──
+  { id: "droit_inquisition",       icon: "🐉", name: "The Droit Inquisition",              desc: "Try every theme at least once.",                        check: (s) => s.allThemesTried },
+  { id: "grey_warden_constitution",icon: "🛡️", name: "Grey Warden of the Constitution",   desc: "Reach a 14-day streak.",                                check: (s) => s.streak >= 14 },
+  // ── Crusader Kings ──
+  { id: "de_jure_drift",           icon: "👸", name: "De Jure Drift",                      desc: "Answer 25 questions correctly (total).",                check: (s) => s.totalCorrect >= 25 },
+  { id: "fabricate_claim",         icon: "📋", name: "Fabricate Claim on the Bloc",        desc: "Score 100% on a Norm Hierarchy & Review quiz.",         check: (s) => s.perfectByTheme["Norm Hierarchy & Review"] },
+  // ── Mass Effect ──
+  { id: "paragon_public_law",      icon: "💙", name: "Paragon of Public Law",              desc: "Score above 80% ten times.",                            check: (s) => s.above80Count >= 10 },
+  { id: "shepard_of_republic",     icon: "🚀", name: "Shepard of the Republic",            desc: "Complete 30 quizzes.",                                  check: (s) => s.totalAttempts >= 30 },
+  // ── Fallout ──
+  { id: "constitutional_never_changes", icon: "☢️", name: "Constitutional… Never Changes", desc: "Score 100% on two different themes.",                   check: (s) => s.perfectThemeCount >= 2 },
+  { id: "vats_scholar",            icon: "🎯", name: "V.A.T.S. — Very Accurate Treaty Scholar", desc: "Score 100% on a Constitutional Procedures quiz.", check: (s) => s.perfectByTheme["Constitutional Procedures & Review"] },
+  // ── Cities: Skylines ──
+  { id: "zoning_expert",           icon: "🏗️", name: "Zoning Ordinance Expert",            desc: "Score 100% on a State Organization quiz.",              check: (s) => s.perfectByTheme["State Organization"] },
+  // ── Zelda ──
+  { id: "dangerous_alone",         icon: "🗡️", name: "It's Dangerous to Go Alone, Take This Article", desc: "Complete your first themed quiz.", check: (s) => s.themedQuizDone },
+  { id: "triforce_public_law",     icon: "🔺", name: "Triforce of Public Law",             desc: "Score 100% on 3 different themes.",                     check: (s) => s.perfectThemeCount >= 3 },
+  // ── Tomodachi Life ──
+  { id: "best_constitutional_roommate", icon: "🏝️", name: "Best Constitutional Roommate", desc: "Complete 20 quizzes.",                                  check: (s) => s.totalAttempts >= 20 },
+  // ── X-Men ──
+  { id: "professor_xces",          icon: "🧬", name: "Professor X-cès de Pouvoir",         desc: "Score 100% on a Justice Organization quiz.",            check: (s) => s.perfectByTheme["Justice Organization"] },
+  { id: "wolverine_jurisprudence", icon: "🐺", name: "Wolverine of Jurisprudence",         desc: "Come back from a 0/5 to a 5/5 across two quizzes.",     check: (s) => s.wolverineComeback },
+  { id: "xmen_assembly",           icon: "🦸", name: "X-Men: Assemblée Nationale",         desc: "Answer 150 questions correctly (total).",               check: (s) => s.totalCorrect >= 150 },
 ];
 
 /* ── Spaced Repetition Storage ─────────────────────────── */
@@ -609,11 +641,68 @@ function computeBadgeStats() {
     }
   }
 
+  // --- New stats for game-reference badges ---
+
+  // quizzesToday: how many quizzes done today
+  const todayStr = new Date().toISOString().slice(0, 10);
+  const quizzesToday = history.filter((a) => {
+    const d = a.date || (a.timestamp && a.timestamp.slice(0, 10));
+    return d === todayStr;
+  }).length;
+
+  // allThemesTried: every theme attempted at least once
+  const ALL_THEMES = [
+    "Institutions & Powers",
+    "Constitutional Procedures & Review",
+    "Conseil d'État Jurisprudence",
+    "State Organization",
+    "Norm Hierarchy & Review",
+    "Justice Organization",
+    "Public Freedoms"
+  ];
+  const triedThemes = new Set();
+  const bestByTheme = {};
+  history.forEach((a) => {
+    const ts = a.themeStats || {};
+    Object.entries(ts).forEach(([theme, s]) => {
+      if (s.total > 0) {
+        triedThemes.add(theme);
+        const pct = s.correct / s.total;
+        if (!bestByTheme[theme] || pct > bestByTheme[theme]) bestByTheme[theme] = pct;
+      }
+    });
+  });
+  const allThemesTried = ALL_THEMES.every((t) => triedThemes.has(t));
+
+  // allThemesAbove60: every theme scored above 60% at least once
+  const allThemesAbove60 = ALL_THEMES.every((t) => bestByTheme[t] && bestByTheme[t] >= 0.6);
+
+  // themedQuizDone: completed at least one non-"All themes" quiz
+  const themedQuizDone = history.some((a) => (a.theme && a.theme !== "all") || (!a.theme && a.themeStats && Object.keys(a.themeStats).length === 1));
+
+  // perfectThemeCount: number of distinct themes with 100%
+  const perfectThemeCount = Object.keys(perfectByTheme).length;
+
+  // above80Count: quizzes with score > 80%
+  const above80Count = history.filter((a) => a.total > 0 && a.score / a.total >= 0.8).length;
+
+  // wolverineComeback: went from 0/total to total/total across consecutive quizzes
+  let wolverineComeback = false;
+  for (let i = 1; i < history.length; i++) {
+    if (history[i - 1].score === 0 && history[i].score === history[i].total) {
+      wolverineComeback = true;
+      break;
+    }
+  }
+
   return {
     totalAttempts, totalCorrect, perfectQuizzes,
     consecutivePerfects: maxConsecutive,
     streak: streakData.currentStreak,
-    perfectByTheme, improved, fiveInARow
+    perfectByTheme, improved, fiveInARow,
+    quizzesToday, allThemesAbove60, allThemesTried,
+    themedQuizDone, perfectThemeCount, above80Count,
+    wolverineComeback
   };
 }
 
@@ -732,8 +821,10 @@ function addAttemptToHistory() {
   const history = getHistory();
   history.push({
     timestamp: new Date().toISOString(),
+    date: new Date().toISOString().slice(0, 10),
     score,
     total: selectedQuestions.length,
+    theme: themeSelect ? themeSelect.value : "all",
     themeStats: attemptThemeStats
   });
 
