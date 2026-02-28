@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>French Constitutional Law Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <h1>French Constitutional Law Quiz</h1>
+        <p>Practice quick quizzes based on the Constitution of the Fifth Republic (1958).</p>
+        <nav class="tabs" aria-label="Main navigation">
+          <button id="quiz-tab-btn" class="tab-btn active" type="button">Quiz</button>
+          <button id="history-tab-btn" class="tab-btn" type="button">History</button>
+        </nav>
+      </header>
+
+      <section id="intro" class="card active">
+        <h2>Start a Quiz</h2>
+        <p>Each quiz has 5 questions. You will get feedback after each answer.</p>
+        <button id="start-btn" class="btn">Start Quiz</button>
+      </section>
+
+      <section id="quiz" class="card" aria-live="polite">
+        <div class="quiz-top">
+          <p id="progress" class="meta"></p>
+          <p id="score" class="meta"></p>
+        </div>
+
+        <h2 id="question-text"></h2>
+        <div id="choices" class="choices"></div>
+
+        <p id="feedback" class="feedback"></p>
+
+        <div class="actions">
+          <button id="next-btn" class="btn" disabled>Next</button>
+        </div>
+      </section>
+
+      <section id="result" class="card">
+        <h2>Quiz Result</h2>
+        <p id="final-score"></p>
+        <p id="result-message"></p>
+        <button id="restart-btn" class="btn">Try Another Quiz</button>
+      </section>
+
+      <section id="history" class="card">
+        <h2>Progress History</h2>
+        <p id="history-overview" class="meta"></p>
+        <div class="history-grid">
+          <div>
+            <h3>Theme Performance</h3>
+            <ul id="theme-summary" class="history-list"></ul>
+          </div>
+          <div>
+            <h3>Recent Attempts</h3>
+            <ul id="attempt-list" class="history-list"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
