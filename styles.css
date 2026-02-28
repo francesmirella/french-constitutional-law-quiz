@@ -156,3 +156,97 @@ body {
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+.label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.select {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #111827;
+  font-size: 0.98rem;
+  margin-bottom: 14px;
+}
+
+.streak-banner {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #4b5563;
+  min-height: 1.4em;
+}
+
+.streak-banner .streak-fire {
+  color: #ea580c;
+}
+
+.new-badges {
+  margin: 12px 0;
+  display: grid;
+  gap: 8px;
+}
+
+.new-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #fef9c3, #fef3c7);
+  border: 1px solid #fbbf24;
+  font-size: 0.95rem;
+}
+
+.new-badge-item .badge-icon {
+  font-size: 1.3rem;
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.badge-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  background: #ffffff;
+  transition: transform 0.15s;
+}
+
+.badge-card.unlocked {
+  border-color: #fbbf24;
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+}
+
+.badge-card.locked {
+  opacity: 0.5;
+  filter: grayscale(0.7);
+}
+
+.badge-card .badge-icon {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.badge-card .badge-name {
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin-bottom: 2px;
+}
+
+.badge-card .badge-desc {
+  font-size: 0.82rem;
+  color: #6b7280;
+}

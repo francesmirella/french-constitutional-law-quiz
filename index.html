@@ -14,12 +14,28 @@
         <nav class="tabs" aria-label="Main navigation">
           <button id="quiz-tab-btn" class="tab-btn active" type="button">Quiz</button>
           <button id="history-tab-btn" class="tab-btn" type="button">History</button>
+          <button id="badges-tab-btn" class="tab-btn" type="button">Badges</button>
         </nav>
       </header>
 
       <section id="intro" class="card active">
         <h2>Start a Quiz</h2>
         <p>Each quiz has 5 questions. You will get feedback after each answer.</p>
+
+        <label for="theme-select" class="label">Theme</label>
+        <select id="theme-select" class="select">
+          <option value="all">All themes (mixed)</option>
+          <option value="Institutions & Powers">Institutions & Powers</option>
+          <option value="Constitutional Procedures & Review">Constitutional Procedures & Review</option>
+          <option value="Norm Hierarchy & Review">Norm Hierarchy & Review</option>
+          <option value="Conseil d'État Jurisprudence">Conseil d'État Jurisprudence</option>
+          <option value="Justice Organization">Justice Organization</option>
+          <option value="Public Freedoms">Public Freedoms</option>
+          <option value="State Organization">State Organization</option>
+        </select>
+
+        <div id="streak-banner" class="streak-banner"></div>
+
         <button id="start-btn" class="btn">Start Quiz</button>
       </section>
 
@@ -43,6 +59,7 @@
         <h2>Quiz Result</h2>
         <p id="final-score"></p>
         <p id="result-message"></p>
+        <div id="new-badges" class="new-badges"></div>
         <button id="restart-btn" class="btn">Try Another Quiz</button>
       </section>
 
@@ -59,6 +76,12 @@
             <ul id="attempt-list" class="history-list"></ul>
           </div>
         </div>
+      </section>
+
+      <section id="badges" class="card">
+        <h2>Achievements</h2>
+        <p id="badges-overview" class="meta"></p>
+        <div id="badges-grid" class="badges-grid"></div>
       </section>
     </main>
 

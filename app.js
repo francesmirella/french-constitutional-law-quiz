@@ -399,13 +399,20 @@ const questionBank = [
 
 const QUESTIONS_PER_QUIZ = 5;
 const HISTORY_STORAGE_KEY = "french_constitution_quiz_history";
+const SPACED_REP_KEY = "french_constitution_quiz_spaced";
+const STREAK_KEY = "french_constitution_quiz_streak";
+const BADGES_KEY = "french_constitution_quiz_badges";
 
 const introSection = document.getElementById("intro");
 const quizSection = document.getElementById("quiz");
 const resultSection = document.getElementById("result");
 const historySection = document.getElementById("history");
+const badgesSection = document.getElementById("badges");
 const quizTabBtn = document.getElementById("quiz-tab-btn");
 const historyTabBtn = document.getElementById("history-tab-btn");
+const badgesTabBtn = document.getElementById("badges-tab-btn");
+const themeSelect = document.getElementById("theme-select");
+const streakBanner = document.getElementById("streak-banner");
 const startBtn = document.getElementById("start-btn");
 const nextBtn = document.getElementById("next-btn");
 const restartBtn = document.getElementById("restart-btn");
@@ -416,15 +423,245 @@ const choicesEl = document.getElementById("choices");
 const feedbackEl = document.getElementById("feedback");
 const finalScoreEl = document.getElementById("final-score");
 const resultMessageEl = document.getElementById("result-message");
+const newBadgesEl = document.getElementById("new-badges");
 const historyOverviewEl = document.getElementById("history-overview");
 const themeSummaryEl = document.getElementById("theme-summary");
 const attemptListEl = document.getElementById("attempt-list");
+const badgesOverviewEl = document.getElementById("badges-overview");
+const badgesGridEl = document.getElementById("badges-grid");
 
 let selectedQuestions = [];
 let currentIndex = 0;
 let score = 0;
 let answered = false;
 let currentAttemptAnswers = [];
+let newlyUnlockedBadges = [];
+
+/* ── Badge Definitions ─────────────────────────────────── */
+const BADGE_DEFS = [
+  { id: "bloc_party",             icon: "🎉", name: "Bloc Party",                       desc: "Complete your first quiz.",                            check: (s) => s.totalAttempts >= 1 },
+  { id: "separation_of_powers_up",icon: "⚡", name: "Separation of Powers-Up",           desc: "Score 100 % on a quiz.",                               check: (s) => s.perfectQuizzes >= 1 },
+  { id: "fifth_republic_strikes", icon: "🏛️", name: "The Fifth Republic Strikes Back",   desc: "Complete 5 quizzes.",                                  check: (s) => s.totalAttempts >= 5 },
+  { id: "dame_lamotte_it_be",     icon: "⚖️", name: "Dame Lamotte It Be",                desc: "Complete 10 quizzes.",                                 check: (s) => s.totalAttempts >= 10 },
+  { id: "conseil_detat_of_mind",  icon: "🧠", name: "Conseil d'État of Mind",            desc: "Score 100 % on a Conseil d'État quiz.",                check: (s) => s.perfectByTheme["Conseil d'État Jurisprudence"] },
+  { id: "motion_of_ensure",       icon: "🔥", name: "Motion of Ensure",                  desc: "Reach a 3-day streak.",                                check: (s) => s.streak >= 3 },
+  { id: "ordonnance_in_court",    icon: "📜", name: "Ordonnance in the Court",            desc: "Complete 25 quizzes.",                                 check: (s) => s.totalAttempts >= 25 },
+  { id: "habeas_brainpus",        icon: "💡", name: "Habeas Brainpus",                   desc: "Answer 100 questions correctly (total).",              check: (s) => s.totalCorrect >= 100 },
+  { id: "the_constitutionalist",  icon: "👑", name: "The Constitutionalist",             desc: "Score 100 % three times in a row.",                    check: (s) => s.consecutivePerfects >= 3 },
+  { id: "nicolo_deon",            icon: "🌍", name: "Nicolo-deon",                       desc: "Answer 50 questions correctly (total).",               check: (s) => s.totalCorrect >= 50 },
+  { id: "benjamin_button",        icon: "🔄", name: "Benjamin Button",                   desc: "Improve on your previous score.",                      check: (s) => s.improved },
+  { id: "septennat_survivor",     icon: "🗓️", name: "Septennat Survivor",                desc: "Reach a 7-day streak.",                                check: (s) => s.streak >= 7 },
+  { id: "full_quorum",            icon: "🏆", name: "Full Quorum",                       desc: "Complete 50 quizzes.",                                 check: (s) => s.totalAttempts >= 50 },
+  { id: "libertes_fondamentales",icon: "🗽", name: "Libertés Fondamen-totally Nailed It",desc: "Score 100 % on a Public Freedoms quiz.",               check: (s) => s.perfectByTheme["Public Freedoms"] },
+  { id: "article_16_emergency",  icon: "🚨", name: "Article 16 Emergency Ace",          desc: "Get 5 correct answers in a row within a quiz.",        check: (s) => s.fiveInARow },
+];
+
+/* ── Spaced Repetition Storage ─────────────────────────── */
+function getSpacedData() {
+  try {
+    const raw = localStorage.getItem(SPACED_REP_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch { return {}; }
+}
+function saveSpacedData(data) {
+  try { localStorage.setItem(SPACED_REP_KEY, JSON.stringify(data)); } catch {}
+}
+
+function recordAnswer(questionIndex, correct) {
+  const data = getSpacedData();
+  const key = String(questionIndex);
+  if (!data[key]) data[key] = { wrong: 0, right: 0, lastWrong: 0 };
+  if (correct) {
+    data[key].right += 1;
+  } else {
+    data[key].wrong += 1;
+    data[key].lastWrong = Date.now();
+  }
+  saveSpacedData(data);
+}
+
+function weightedSelect(pool, count) {
+  const data = getSpacedData();
+  const now = Date.now();
+  const DAY = 86400000;
+
+  const weighted = pool.map((question) => {
+    const bankIndex = questionBank.indexOf(question);
+    const key = String(bankIndex);
+    const record = data[key];
+    let weight = 1;
+    if (record) {
+      const recency = record.lastWrong ? Math.max(0.2, 1 - (now - record.lastWrong) / (7 * DAY)) : 0;
+      const errorRatio = record.wrong / (record.wrong + record.right);
+      weight = 1 + errorRatio * 3 + recency * 2;
+    }
+    return { question, weight };
+  });
+
+  const selected = [];
+  const remaining = [...weighted];
+
+  for (let i = 0; i < count && remaining.length > 0; i++) {
+    const totalWeight = remaining.reduce((sum, item) => sum + item.weight, 0);
+    let random = Math.random() * totalWeight;
+    let chosenIdx = 0;
+    for (let j = 0; j < remaining.length; j++) {
+      random -= remaining[j].weight;
+      if (random <= 0) { chosenIdx = j; break; }
+    }
+    selected.push(remaining[chosenIdx].question);
+    remaining.splice(chosenIdx, 1);
+  }
+  return selected;
+}
+
+/* ── Streak Tracking ───────────────────────────────────── */
+function getStreakData() {
+  try {
+    const raw = localStorage.getItem(STREAK_KEY);
+    return raw ? JSON.parse(raw) : { currentStreak: 0, lastDate: null };
+  } catch { return { currentStreak: 0, lastDate: null }; }
+}
+function saveStreakData(data) {
+  try { localStorage.setItem(STREAK_KEY, JSON.stringify(data)); } catch {}
+}
+
+function todayString() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function updateStreak() {
+  const streakData = getStreakData();
+  const today = todayString();
+  if (streakData.lastDate === today) return streakData.currentStreak;
+
+  const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+  if (streakData.lastDate === yesterday) {
+    streakData.currentStreak += 1;
+  } else if (streakData.lastDate !== today) {
+    streakData.currentStreak = 1;
+  }
+  streakData.lastDate = today;
+  saveStreakData(streakData);
+  return streakData.currentStreak;
+}
+
+function renderStreakBanner() {
+  const data = getStreakData();
+  if (data.currentStreak >= 2) {
+    streakBanner.innerHTML = `<span class="streak-fire">🔥</span> ${data.currentStreak}-day streak! Keep it going.`;
+  } else if (data.currentStreak === 1) {
+    streakBanner.innerHTML = `<span class="streak-fire">🔥</span> You practiced today. Come back tomorrow to start a streak!`;
+  } else {
+    streakBanner.textContent = "Start a quiz to begin your streak.";
+  }
+}
+
+/* ── Badge System ──────────────────────────────────────── */
+function getUnlockedBadges() {
+  try {
+    const raw = localStorage.getItem(BADGES_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch { return []; }
+}
+function saveUnlockedBadges(badges) {
+  try { localStorage.setItem(BADGES_KEY, JSON.stringify(badges)); } catch {}
+}
+
+function computeBadgeStats() {
+  const history = getHistory();
+  const streakData = getStreakData();
+  const totalAttempts = history.length;
+  const totalCorrect = history.reduce((sum, a) => sum + a.score, 0);
+  const perfectQuizzes = history.filter((a) => a.score === a.total).length;
+
+  let consecutivePerfects = 0;
+  let maxConsecutive = 0;
+  for (let i = history.length - 1; i >= 0; i--) {
+    if (history[i].score === history[i].total) {
+      consecutivePerfects++;
+      maxConsecutive = Math.max(maxConsecutive, consecutivePerfects);
+    } else {
+      break;
+    }
+  }
+
+  const perfectByTheme = {};
+  history.forEach((attempt) => {
+    const ts = attempt.themeStats || {};
+    Object.entries(ts).forEach(([theme, stats]) => {
+      if (stats.total > 0 && stats.correct === stats.total) {
+        perfectByTheme[theme] = true;
+      }
+    });
+  });
+
+  const improved = history.length >= 2 &&
+    history[history.length - 1].score / history[history.length - 1].total >
+    history[history.length - 2].score / history[history.length - 2].total;
+
+  let fiveInARow = false;
+  if (currentAttemptAnswers.length >= 5) {
+    let run = 0;
+    for (const ans of currentAttemptAnswers) {
+      run = ans.correct ? run + 1 : 0;
+      if (run >= 5) { fiveInARow = true; break; }
+    }
+  }
+
+  return {
+    totalAttempts, totalCorrect, perfectQuizzes,
+    consecutivePerfects: maxConsecutive,
+    streak: streakData.currentStreak,
+    perfectByTheme, improved, fiveInARow
+  };
+}
+
+function checkAndAwardBadges() {
+  const stats = computeBadgeStats();
+  const unlocked = getUnlockedBadges();
+  newlyUnlockedBadges = [];
+
+  BADGE_DEFS.forEach((badge) => {
+    if (!unlocked.includes(badge.id) && badge.check(stats)) {
+      unlocked.push(badge.id);
+      newlyUnlockedBadges.push(badge);
+    }
+  });
+
+  saveUnlockedBadges(unlocked);
+  return newlyUnlockedBadges;
+}
+
+function renderNewBadges() {
+  newBadgesEl.innerHTML = "";
+  if (newlyUnlockedBadges.length === 0) return;
+
+  newlyUnlockedBadges.forEach((badge) => {
+    const div = document.createElement("div");
+    div.className = "new-badge-item";
+    div.innerHTML = `<span class="badge-icon">${badge.icon}</span><strong>${badge.name}</strong> — ${badge.desc}`;
+    newBadgesEl.appendChild(div);
+  });
+}
+
+function renderBadgesPage() {
+  const unlocked = getUnlockedBadges();
+  badgesOverviewEl.textContent = `${unlocked.length} / ${BADGE_DEFS.length} achievements unlocked`;
+  badgesGridEl.innerHTML = "";
+
+  BADGE_DEFS.forEach((badge) => {
+    const isUnlocked = unlocked.includes(badge.id);
+    const card = document.createElement("div");
+    card.className = `badge-card ${isUnlocked ? "unlocked" : "locked"}`;
+    card.innerHTML = `
+      <div class="badge-icon">${badge.icon}</div>
+      <div class="badge-name">${badge.name}</div>
+      <div class="badge-desc">${isUnlocked ? badge.desc : "???"}</div>
+    `;
+    badgesGridEl.appendChild(card);
+  });
+}
 
 function getQuestionTheme(question) {
   if (question.theme) {
@@ -587,6 +824,7 @@ function renderHistory() {
 function setActiveTab(tabName) {
   quizTabBtn.classList.toggle("active", tabName === "quiz");
   historyTabBtn.classList.toggle("active", tabName === "history");
+  badgesTabBtn.classList.toggle("active", tabName === "badges");
 }
 
 function showSection(section) {
@@ -594,6 +832,7 @@ function showSection(section) {
   quizSection.classList.remove("active");
   resultSection.classList.remove("active");
   historySection.classList.remove("active");
+  badgesSection.classList.remove("active");
   section.classList.add("active");
 }
 
@@ -607,11 +846,18 @@ function shuffle(array) {
 }
 
 function startQuiz() {
-  selectedQuestions = shuffle(questionBank).slice(0, QUESTIONS_PER_QUIZ);
+  const selectedTheme = themeSelect.value;
+  let pool = questionBank;
+  if (selectedTheme !== "all") {
+    pool = questionBank.filter((q) => getQuestionTheme(q) === selectedTheme);
+    if (pool.length < QUESTIONS_PER_QUIZ) pool = questionBank;
+  }
+  selectedQuestions = weightedSelect(pool, QUESTIONS_PER_QUIZ);
   currentIndex = 0;
   score = 0;
   answered = false;
   currentAttemptAnswers = [];
+  newlyUnlockedBadges = [];
   setActiveTab("quiz");
   showSection(quizSection);
   renderQuestion();
@@ -662,6 +908,8 @@ function handleAnswer(choiceIndex) {
     correct: answerIsCorrect
   });
 
+  recordAnswer(questionBank.indexOf(question), answerIsCorrect);
+
   if (answerIsCorrect) {
     score += 1;
     scoreEl.textContent = `Score: ${score}`;
@@ -682,7 +930,9 @@ function nextQuestion() {
 }
 
 function renderResult() {
+  updateStreak();
   addAttemptToHistory();
+  checkAndAwardBadges();
   showSection(resultSection);
   finalScoreEl.textContent = `You scored ${score} out of ${selectedQuestions.length}.`;
 
@@ -693,10 +943,13 @@ function renderResult() {
   } else {
     resultMessageEl.textContent = "Keep going. Review the explanations and try another quiz.";
   }
+
+  renderNewBadges();
 }
 
 function openQuizHome() {
   setActiveTab("quiz");
+  renderStreakBanner();
   showSection(introSection);
 }
 
@@ -706,8 +959,17 @@ function openHistory() {
   showSection(historySection);
 }
 
+function openBadges() {
+  setActiveTab("badges");
+  renderBadgesPage();
+  showSection(badgesSection);
+}
+
 quizTabBtn.addEventListener("click", openQuizHome);
 historyTabBtn.addEventListener("click", openHistory);
+badgesTabBtn.addEventListener("click", openBadges);
 startBtn.addEventListener("click", startQuiz);
 nextBtn.addEventListener("click", nextQuestion);
 restartBtn.addEventListener("click", startQuiz);
+
+renderStreakBanner();
