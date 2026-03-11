@@ -503,6 +503,257 @@ const questionBank = [
     answerIndex: 1,
     explanation: "Correct: in the classic Cohn-Bendit ruling (1978), the Conseil d'État refused to grant direct effect to EU directives against individual administrative decisions, though this stance was later largely reversed. 'Full direct effect in all circumstances' was the position of the CJEU, not the CE. 'Irrelevant in French law' overstates the refusal. 'Automatically repeal statutes' goes far beyond even the most integrationist view.",
     theme: "Conseil d'État Jurisprudence"
+  },
+  {
+    prompt: "What historical texts are classically cited as reaffirming the separation of administrative and judicial authorities during the Revolution?",
+    choices: ["The 1789 Declaration and the Civil Code", "The law of 16-24 August 1790 and the decree of 16 Fructidor Year III", "The Constitution of Year VIII and the 1872 law", "The Napoleonic Penal Code and the Charter of 1814"],
+    answerIndex: 1,
+    explanation: "Correct: the law of 16-24 August 1790 and the decree of 16 Fructidor an III are the foundational revolutionary texts formalizing separation of authorities. The 1789 Declaration is foundational for rights but does not by itself set this technical jurisdictional regime. The Constitution of Year VIII and law of 1872 concern later institutional development of the Conseil d'Etat. The Penal Code and Charter of 1814 are unrelated to this classic formulation.",
+    theme: "Justice Organization"
+  },
+  {
+    prompt: "Why is TC, 1873, Blanco considered foundational for French administrative law?",
+    choices: ["It abolished judicial courts", "It affirmed that State liability for public service follows special rules and falls under administrative jurisdiction", "It made the Civil Code universally applicable to administration", "It created the Constitutional Council"],
+    answerIndex: 1,
+    explanation: "Correct: Blanco established both the autonomy of administrative liability rules and administrative jurisdiction for such disputes, often described as the birth certificate of administrative law. It did not abolish judicial courts. It rejected, rather than affirmed, automatic application of private civil rules to State liability. The Constitutional Council was created much later in 1958.",
+    theme: "Justice Organization"
+  },
+  {
+    prompt: "In constitutional terms, what does the 1987 Conseil de la concurrence decision protect as a reserved area for the administrative judge?",
+    choices: ["All criminal litigation", "Annulment/reformation of decisions taken by public authorities in exercise of public powers", "Only tax collection disputes", "All disputes involving a municipality, whatever the subject"],
+    answerIndex: 1,
+    explanation: "Correct: the Constitutional Council recognized a PFRLR reserving in principle to administrative courts the annulment or reformation of unilateral acts by public authorities exercising public powers. Criminal litigation remains judicial. Tax disputes are only one subfield. Not every dispute involving a municipality is automatically administrative; subject matter still matters.",
+    theme: "Constitutional Procedures & Review"
+  },
+  {
+    prompt: "What was the major practical effect of TC, 2011, SCEA du Cheneau on preliminary references between judicial and administrative courts?",
+    choices: ["Judicial courts must always refer legality questions", "Judicial courts may avoid referral when EU law is at issue or illegality is manifest from established case law", "Administrative courts lost power to interpret administrative acts", "Preliminary references were abolished entirely"],
+    answerIndex: 1,
+    explanation: "Correct: SCEA du Cheneau reduced mandatory referrals by allowing judicial courts to decide directly in two main scenarios: application of EU law and manifest illegality in light of settled administrative jurisprudence. It did not impose stricter mandatory referral, did not strip administrative courts of interpretive authority, and did not abolish the mechanism altogether.",
+    theme: "Justice Organization"
+  },
+  {
+    prompt: "According to the 2015 reform (decree of 27 Feb 2015), how are prejudicial questions now mainly transmitted?",
+    choices: ["By filing a new lawsuit by each party", "Directly from judge to judge", "Only through the Ministry of Justice", "Only through the Constitutional Council"],
+    answerIndex: 1,
+    explanation: "Correct: the reform simplified procedure by allowing direct transmission between courts (judge-to-judge), avoiding a full new filing by parties. The Ministry of Justice is not the procedural channel for these referrals. The Constitutional Council is involved in QPC filtering, not ordinary prejudicial transmission between orders.",
+    theme: "Justice Organization"
+  },
+  {
+    prompt: "Since the 2015 reform of the Tribunal des conflits, what happens in case of an equal split of votes?",
+    choices: ["The Minister of Justice decides", "The case is dismissed", "The Tribunal sits in enlarged formation", "The Cour de cassation automatically prevails"],
+    answerIndex: 2,
+    explanation: "Correct: after reform, ministerial presidency was removed and ties are resolved by an enlarged formation (from 8 to 12 members), strengthening impartiality. The Minister of Justice no longer breaks ties. Equal split does not mean automatic dismissal. Neither judicial high court has automatic precedence over the Tribunal des conflits.",
+    theme: "Justice Organization"
+  },
+  {
+    prompt: "What is a 'conflit positif' before the Tribunal des conflits?",
+    choices: ["When both orders decline jurisdiction", "When the administration contests judicial jurisdiction and raises conflict to protect administrative jurisdiction", "When both orders issue contradictory merits judgments", "When a litigant loses in both orders"],
+    answerIndex: 1,
+    explanation: "Correct: a positive conflict arises when administrative authority (through the State representative) challenges a judicial court's jurisdiction and elevates the conflict so the Tribunal des conflits decides competence. 'Both decline' describes a negative conflict. Contradictory final merits decisions refer to conflicts of decisions. Losing in both orders is not itself a legal category.",
+    theme: "Justice Organization"
+  },
+  {
+    prompt: "Under article 66 of the Constitution, what is the core mission of the judicial authority?",
+    choices: ["Reviewing all administrative contracts", "Guarding individual liberty against arbitrary detention", "Approving all police regulations", "Judging constitutional amendments"],
+    answerIndex: 1,
+    explanation: "Correct: article 66 makes the judicial authority guardian of individual liberty, classically linked to protection against arbitrary detention. It does not give judicial courts general control over all administrative contracts. Police regulations are mostly administrative-law matters, and constitutional amendment procedures are governed by political-constitutional organs.",
+    theme: "Public Freedoms"
+  },
+  {
+    prompt: "Which statement best reflects competence over police judiciaire operations (e.g., Giry line)?",
+    choices: ["They always belong to administrative courts", "They belong to judicial courts, including liability linked to police judiciaire operations", "They are judged by the Constitutional Council", "They are non-justiciable acts of government"],
+    answerIndex: 1,
+    explanation: "Correct: disputes tied to police judiciaire operations, including related liability contexts, generally fall under judicial courts. Administrative courts are primarily competent for police administrative actions. The Constitutional Council does not act as ordinary trial judge in such disputes. These are not categorically non-justiciable acts of government.",
+    theme: "Justice Organization"
+  },
+  {
+    prompt: "For a contract to be administratively qualified in ordinary case law (outside special statutory qualification), which condition pair is generally required?",
+    choices: ["Two private parties + general-interest purpose", "At least one public party + material criterion (public service participation or exorbitant clause)", "State financing + written form", "Presence of a penalty clause + ministerial signature"],
+    answerIndex: 1,
+    explanation: "Correct: the classic test combines an organic criterion (at least one public person) with a material criterion, met alternatively through direct participation in public service execution or an exorbitant clause. Two private parties alone generally imply private law. State financing or written form is insufficient by itself. Penalty clause/ministerial signature is not the governing test.",
+    theme: "Norm Hierarchy & Review"
+  },
+  {
+    prompt: "What did TC, 1921, Societe commerciale de l'Ouest africain (Bac d'Eloka) famously illustrate?",
+    choices: ["All public services are governed by public law", "Some public services (SPIC) can operate under private-law logic and judicial jurisdiction", "The suppression of the dual system", "The end of liability for public services"],
+    answerIndex: 1,
+    explanation: "Correct: Bac d'Eloka founded the SPIC category, showing that certain public services function like ordinary commercial undertakings and therefore can fall under private law and judicial courts. It did not universalize public law for all services, did not abolish dualism, and did not remove liability regimes.",
+    theme: "Justice Organization"
+  },
+  {
+    prompt: "Which order is generally competent for disputes relating to social security litigation under the French Social Security Code?",
+    choices: ["Administrative order", "Judicial order", "Constitutional Council", "Tribunal des conflits as first instance"],
+    answerIndex: 1,
+    explanation: "Correct: the Social Security Code (including article L.142-8) assigns these disputes to the judicial order. Administrative courts are not the default forum here. The Constitutional Council does not hear ordinary social security disputes as a trial court. The Tribunal des conflits resolves competence conflicts, not ordinary first-instance social security cases.",
+    theme: "Justice Organization"
+  },
+  {
+    prompt: "According to 2024-2025 case law in your notes, what is the key criterion for classifying a territorial account on social media as part of local public-service information?",
+    choices: ["Any account owned by an elected official", "Only institutional accounts managed by or under control of the local authority", "Any account discussing local policy", "Only accounts with more than 10,000 followers"],
+    answerIndex: 1,
+    explanation: "Correct: the notes summarize that only institutional accounts managed by the territorial authority (or under its control) participate in the local public-information service mission; personal accounts of elected officials remain personal even if the profile shows elected status. Mere discussion of local policy is not enough. Audience size has no decisive jurisdictional value.",
+    theme: "State Organization"
+  },
+  {
+    prompt: "[Easy] Which jurisdictional model structures justice in France?",
+    choices: ["Single court order only", "Dual order: administrative and judicial", "Regional courts only", "EU courts only"],
+    answerIndex: 1,
+    explanation: "Correct: French law is based on dualisme juridictionnel, with separate administrative and judicial orders. A single order is not the French model. Regional and EU courts exist but do not replace the dual national structure.",
+    theme: "Justice Organization",
+    difficulty: "easy"
+  },
+  {
+    prompt: "[Easy] Which text in your notes created constitutional-level visibility of the two supreme referral courts in QPC procedure?",
+    choices: ["Article 16 DDHC", "Article 61-1 of the Constitution", "Article 34 of the Constitution", "Article L.2111-1 CG3P"],
+    answerIndex: 1,
+    explanation: "Correct: article 61-1, introduced in 2008, references referral by both Conseil d'Etat and Cour de cassation in QPC procedure. Article 16 DDHC is a rights principle, article 34 concerns legislative domain, and L.2111-1 CG3P defines public domain.",
+    theme: "Constitutional Procedures & Review",
+    difficulty: "easy"
+  },
+  {
+    prompt: "[Easy] In TC conflict terminology, when both orders have irreversibly declined competence on the same issue, this is called:",
+    choices: ["Conflit positif", "Conflit de decisions", "Conflit negatif", "Question prioritaire"],
+    answerIndex: 2,
+    explanation: "Correct: this is a conflit negatif, where each order declines jurisdiction. Conflit positif is when administrative authority challenges judicial jurisdiction. Conflit de decisions concerns contradictory final judgments on same object causing denial of justice. QPC is constitutional review mechanism.",
+    theme: "Justice Organization",
+    difficulty: "easy"
+  },
+  {
+    prompt: "[Easy] After 2015 reform, who no longer presides over the Tribunal des conflits?",
+    choices: ["First President of Cour de cassation", "Vice-President of Conseil d'Etat", "Minister of Justice", "Prime Minister"],
+    answerIndex: 2,
+    explanation: "Correct: the Minister of Justice no longer presides over the Tribunal des conflits, which reinforced impartiality. The heads of high courts remain institutionally linked to the tribunal's membership, but ministerial presidency was removed.",
+    theme: "Justice Organization",
+    difficulty: "easy"
+  },
+  {
+    prompt: "[Easy] Under article 111-5 of the Penal Code, criminal courts may:",
+    choices: ["Never assess legality of administrative acts", "Interpret administrative acts and assess legality when needed for criminal case resolution", "Only refer automatically to administrative courts", "Review constitutional amendments"],
+    answerIndex: 1,
+    explanation: "Correct: article 111-5 grants criminal courts power to interpret and assess legality of administrative acts when necessary to decide the criminal case. It does not require automatic referral in all cases, and has nothing to do with constitutional amendment review.",
+    theme: "Justice Organization",
+    difficulty: "easy"
+  },
+  {
+    prompt: "[Easy] The classic 1950 decision establishing that REP exists even without explicit text is:",
+    choices: ["Nicolo", "Dame Lamotte", "Blanco", "Septfonds"],
+    answerIndex: 1,
+    explanation: "Correct: CE, 1950, Dame Lamotte affirmed recours pour exces de pouvoir as a general legal remedy even without explicit statutory provision. Nicolo concerns treaty review over statutes, Blanco concerns administrative liability, and Septfonds concerns prejudicial referral conditions.",
+    theme: "Conseil d'État Jurisprudence",
+    difficulty: "easy"
+  },
+  {
+    prompt: "[Medium] Which of the following best states the constitutional exception allowing the legislator to create jurisdictional competence blocs?",
+    choices: ["Only when Parliament votes unanimously", "When unifying competence in the mainly concerned order serves good administration of justice", "Only in tax disputes", "Only for constitutional litigation"],
+    answerIndex: 1,
+    explanation: "Correct: Conseil constitutionnel (1987) allows legislative unification of competence in the principally concerned order for bonne administration de la justice. It is not conditioned on unanimity, nor limited to tax or constitutional litigation.",
+    theme: "Constitutional Procedures & Review",
+    difficulty: "medium"
+  },
+  {
+    prompt: "[Medium] In your notes, a question prejudicielle is triggered when:",
+    choices: ["The main issue and accessory issue belong to same order", "The main judge faces an accessory issue reserved to the other order", "Any party requests delay", "A constitutional issue is always raised"],
+    answerIndex: 1,
+    explanation: "Correct: prejudicial referral applies when the judge competent on the principal claim faces a serious accessory issue within the other order's jurisdiction. It is not a simple party-delay tactic and does not automatically require a constitutional issue.",
+    theme: "Justice Organization",
+    difficulty: "medium"
+  },
+  {
+    prompt: "[Medium] After SCEA du Cheneau, judicial courts may avoid referral to administrative courts notably when:",
+    choices: ["Any legal doubt exists", "Illegality is manifest under settled administrative case law", "The act is a ministerial circular", "The dispute involves a municipality"],
+    answerIndex: 1,
+    explanation: "Correct: one key exception is manifest illegality in light of settled administrative jurisprudence; another concerns EU-law application. Mere legal doubt, municipal involvement, or circular form alone do not automatically waive referral.",
+    theme: "Justice Organization",
+    difficulty: "medium"
+  },
+  {
+    prompt: "[Medium] Which statement about conflicts of decisions before the Tribunal des conflits is accurate?",
+    choices: ["Any contradictory reasoning is enough", "There must be final decisions on disputes with same object causing denial of justice", "It applies only in criminal law", "It requires prior constitutional referral"],
+    answerIndex: 1,
+    explanation: "Correct: article 15 (law of 24 May 1872) requires definitive decisions in instances before both orders concerning same object, with contradiction causing denial of justice. It is not limited to criminal law and does not require constitutional referral.",
+    theme: "Justice Organization",
+    difficulty: "medium"
+  },
+  {
+    prompt: "[Medium] Which criterion pair most accurately reflects classification of goods as domaine public under CG3P article L.2111-1?",
+    choices: ["Belonging to public person + use by elected officials", "Belonging to public person + either direct public use or public-service assignment with indispensable adaptation", "Any property used for public policy", "Any building owned by municipality"],
+    answerIndex: 1,
+    explanation: "Correct: L.2111-1 requires public ownership plus either direct public use or assignment to a public service with indispensable adaptation. Political relevance or municipal ownership alone is insufficient.",
+    theme: "Norm Hierarchy & Review",
+    difficulty: "medium"
+  },
+  {
+    prompt: "[Medium] Under your notes, litigation over regularity in form of tax enforcement acts (contentieux du recouvrement) generally belongs to:",
+    choices: ["Administrative courts", "Judicial courts", "Tribunal des conflits directly", "Constitutional Council"],
+    answerIndex: 1,
+    explanation: "Correct: under LPF article L.281 and related case law, form-regularity challenges to enforcement acts in tax collection go to judicial courts. Administrative courts and Constitutional Council are not first-instance forums for this specific category.",
+    theme: "Norm Hierarchy & Review",
+    difficulty: "medium"
+  },
+  {
+    prompt: "[Medium] Which statement best fits TC 2014, AXA France IARD, on clauses exorbitantes?",
+    choices: ["Any unusual clause is exorbitant", "An exorbitant clause notably grants public prerogatives in execution, implying an administrative contract regime", "Only financial clauses matter", "Exorbitance depends only on contract title"],
+    answerIndex: 1,
+    explanation: "Correct: AXA defines clause exorbitante through substantive public prerogatives and general-interest logic implying an administrative regime. It is not based on mere oddity, purely financial terms, or contract labeling.",
+    theme: "Conseil d'État Jurisprudence",
+    difficulty: "medium"
+  },
+  {
+    prompt: "[Hard] Which proposition correctly combines TC Septfonds (1923), Penal Code article 111-5 (1994), and SCEA du Cheneau (2011)?",
+    choices: ["Judicial courts always have full legality review over all administrative acts", "Classic referral duty was narrowed by later exceptions for criminal courts and for EU-law/manifest-illegality scenarios", "Referral was abolished in 1994", "Only administrative courts may ever interpret regulatory acts"],
+    answerIndex: 1,
+    explanation: "Correct: Septfonds imposed strict referral in serious legality issues; later, criminal courts gained broader powers (111-5), and SCEA du Cheneau added key exceptions for EU-law and manifest illegality. Referral was not abolished, and interpretation powers are not exclusively administrative in every context.",
+    theme: "Justice Organization",
+    difficulty: "hard"
+  },
+  {
+    prompt: "[Hard] Which is the most accurate reading of the 1987 constitutional reservation of administrative competence?",
+    choices: ["Absolute monopoly of administrative courts for all disputes involving public persons", "Reserved in principle for annulment/reformation of unilateral public-power acts, with exceptions for matters naturally reserved to judicial authority and legislatively created competence blocs", "Limited to local authorities only", "Applicable only to first-instance courts"],
+    answerIndex: 1,
+    explanation: "Correct: the reservation targets annulment/reformation of unilateral decisions taken under public powers, while preserving exceptions (matieres reservees par nature, competence blocs). It is neither an all-disputes monopoly, nor limited to local authorities or first instance.",
+    theme: "Constitutional Procedures & Review",
+    difficulty: "hard"
+  },
+  {
+    prompt: "[Hard] Which statement best captures the relationship between contradiction of decisions and denial of justice in Tribunal des conflits case law?",
+    choices: ["Any contradiction automatically equals denial of justice", "Contradiction can exist without denial of justice if claimant had no substantive right to indemnity in any event", "Denial of justice exists only in criminal cases", "Denial of justice is presumed whenever two orders are involved"],
+    answerIndex: 1,
+    explanation: "Correct: your notes reflect that contradiction is not automatically denial of justice; where no entitlement existed, contradictory reasoning may still not deprive claimant of a due right. This is not limited to criminal law and is never presumed simply because both orders were seized.",
+    theme: "Justice Organization",
+    difficulty: "hard"
+  },
+  {
+    prompt: "[Hard] In the 2025 Grand Quevilly/UGAP line from your notes, the jurisdiction result primarily turns on:",
+    choices: ["Private status of all contracting entities", "Statutory qualification of markets under public procurement rules giving them administrative-contract character", "Amount in dispute", "Location of works only"],
+    answerIndex: 1,
+    explanation: "Correct: the decision emphasizes legal qualification under procurement statutes (including article 2 of 2001 law and subsequent codification), leading to administrative-contract character and administrative jurisdiction. Entity private status, amount, or location alone were not decisive.",
+    theme: "Norm Hierarchy & Review",
+    difficulty: "hard"
+  },
+  {
+    prompt: "[Hard] Which option most accurately reflects judicial competence over attacks to individual liberty and domicile under article 136 CPP as summarized in your notes?",
+    choices: ["Administrative courts exclusively", "Judicial courts for actions based on criminally defined infringements by public authority/service agents", "Tribunal des conflits first instance", "Constitutional Council on direct action"],
+    answerIndex: 1,
+    explanation: "Correct: article 136 CPP assigns these actions to judicial courts where facts correspond to penal offences against liberty/inviolability of domicile by public authority or service agents. It is not an administrative exclusive field, nor first-instance competence of the Tribunal des conflits or Constitutional Council.",
+    theme: "Public Freedoms",
+    difficulty: "hard"
+  },
+  {
+    prompt: "[Hard] According to your notes, why can goods in a co-owned building (copropriete), even held by a public person, fail to be domaine public?",
+    choices: ["Because public persons cannot own buildings", "Because core copropriete rules are incompatible with domanialite publique and ouvrage public regime", "Because municipal property is always private", "Because no litigation can arise in copropriete"],
+    answerIndex: 1,
+    explanation: "Correct: TC 2024 highlights incompatibilities between essential copropriete regime rules and public-domain/public-works regimes, which can prevent classification as domaine public despite public ownership/use. Public persons can own buildings, municipalities can hold public or private domain, and litigation in copropriete certainly exists.",
+    theme: "Norm Hierarchy & Review",
+    difficulty: "hard"
+  },
+  {
+    prompt: "[Hard] Which formulation best reflects article 16 of the 24 May 1872 law (post-2015 reform) concerning excessive duration of proceedings across both orders?",
+    choices: ["Only each order indemnifies its own delays separately", "Tribunal des conflits may hear indemnity actions where excessive duration stems from competence-allocation across both orders in same dispute between same parties", "Only CEDH can award compensation", "Compensation is limited to criminal matters"],
+    answerIndex: 1,
+    explanation: "Correct: article 16 gives the Tribunal des conflits competence to decide compensation claims tied to excessive duration caused by competence allocation between orders for the same dispute and parties. It is not restricted to criminal matters, and domestic remedy is not excluded by CEDH supervision.",
+    theme: "Justice Organization",
+    difficulty: "hard"
   }
 ];
 
@@ -511,6 +762,15 @@ const HISTORY_STORAGE_KEY = "french_constitution_quiz_history";
 const SPACED_REP_KEY = "french_constitution_quiz_spaced";
 const STREAK_KEY = "french_constitution_quiz_streak";
 const BADGES_KEY = "french_constitution_quiz_badges";
+const LATEST_CONTENT_UPDATE = {
+  addedCount: 42,
+  themes: [
+    "Justice Organization",
+    "Public Freedoms",
+    "Norm Hierarchy & Review",
+    "State Organization"
+  ]
+};
 
 const introSection = document.getElementById("intro");
 const quizSection = document.getElementById("quiz");
@@ -538,6 +798,7 @@ const themeSummaryEl = document.getElementById("theme-summary");
 const attemptListEl = document.getElementById("attempt-list");
 const badgesOverviewEl = document.getElementById("badges-overview");
 const badgesGridEl = document.getElementById("badges-grid");
+const updateAlertEl = document.getElementById("update-alert");
 
 let selectedQuestions = [];
 let currentIndex = 0;
@@ -704,6 +965,14 @@ function renderStreakBanner() {
   } else {
     streakBanner.textContent = "Start a quiz to begin your streak.";
   }
+}
+
+function renderUpdateAlert() {
+  if (!updateAlertEl) {
+    return;
+  }
+
+  updateAlertEl.textContent = `Update: ${LATEST_CONTENT_UPDATE.addedCount} new questions added in ${LATEST_CONTENT_UPDATE.themes.join(", ")}.`;
 }
 
 /* ── Badge System ──────────────────────────────────────── */
@@ -1185,3 +1454,4 @@ nextBtn.addEventListener("click", nextQuestion);
 restartBtn.addEventListener("click", startQuiz);
 
 renderStreakBanner();
+renderUpdateAlert();
