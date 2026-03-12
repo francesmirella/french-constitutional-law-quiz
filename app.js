@@ -754,6 +754,295 @@ const questionBank = [
     explanation: "Correct: article 16 gives the Tribunal des conflits competence to decide compensation claims tied to excessive duration caused by competence allocation between orders for the same dispute and parties. It is not restricted to criminal matters, and domestic remedy is not excluded by CEDH supervision.",
     theme: "Justice Organization",
     difficulty: "hard"
+  },
+  // ── New batch: Troisieme Partie (Statut) ──
+  {
+    prompt: "[Easy] The principle of judicial independence in France is primarily guaranteed by which constitutional article?",
+    choices: ["Article 16", "Article 64", "Article 72", "Article 89"],
+    answerIndex: 1,
+    explanation: "Correct: Article 64 states that the President of the Republic is guarantor of judicial independence and that magistrates of the bench are irremovable. Article 16 concerns exceptional powers, Article 72 local authorities, and Article 89 constitutional revision.",
+    theme: "Justice Organization",
+    difficulty: "easy"
+  },
+  {
+    prompt: "[Easy] In French legal vocabulary, magistrats du siege are mainly characterized by:",
+    choices: ["Representing the prosecution only", "Irremovability from office", "Election by local councils", "Appointment by referendum"],
+    answerIndex: 1,
+    explanation: "Correct: magistrats du siege (judges ruling on cases) are protected by irremovability, a core safeguard of impartial adjudication. Prosecutors belong to the parquet, and judges are neither elected by local councils nor appointed by referendum.",
+    theme: "Justice Organization",
+    difficulty: "easy"
+  },
+  {
+    prompt: "[Easy] Which institution participates in appointments and discipline of magistrates?",
+    choices: ["The CESE", "The CSM", "The Cour des comptes", "The Senate legal committee"],
+    answerIndex: 1,
+    explanation: "Correct: the Conseil superieur de la magistrature (CSM) has key constitutional functions in appointments and disciplinary proceedings for magistrates. The CESE and Cour des comptes have different constitutional missions.",
+    theme: "Institutions & Powers",
+    difficulty: "easy"
+  },
+  {
+    prompt: "[Easy] The parquet (public prosecution service) is generally responsible for:",
+    choices: ["Rendering final civil judgments", "Defending the interests of society and directing public prosecution", "Auditing municipal budgets", "Reviewing constitutionality of statutes"],
+    answerIndex: 1,
+    explanation: "Correct: the parquet directs or supervises criminal prosecution in the public interest. Final judgments are rendered by judges of the bench, budget audit by financial jurisdictions, and constitutional review by the Constitutional Council.",
+    theme: "Justice Organization",
+    difficulty: "easy"
+  },
+  {
+    prompt: "[Easy] Which right most directly protects anyone summoned before a disciplinary body of the judiciary?",
+    choices: ["Right to defense", "Right to dissolve Parliament", "Right to issue decrees", "Right to census review"],
+    answerIndex: 0,
+    explanation: "Correct: rights of defense (droits de la defense) are a fundamental procedural guarantee, including access to allegations and opportunity to respond. The other options concern unrelated constitutional or administrative powers.",
+    theme: "Public Freedoms",
+    difficulty: "easy"
+  },
+  {
+    prompt: "[Easy] Judicial ethics rules mainly seek to preserve:",
+    choices: ["Political neutrality and impartiality", "Government monopoly over judging", "Automatic conviction rates", "Abolition of appeals"],
+    answerIndex: 0,
+    explanation: "Correct: ethics and deontology in the judiciary protect impartiality, dignity, probity, and public confidence in justice. They do not justify executive capture of courts, conviction quotas, or suppression of remedies.",
+    theme: "Justice Organization",
+    difficulty: "easy"
+  },
+  {
+    prompt: "[Medium] Why is irremovability of judges considered a structural guarantee rather than a personal privilege?",
+    choices: ["It protects litigants from pressure on judges", "It exempts judges from all laws", "It allows judges to ignore precedent", "It grants immunity for private acts"],
+    answerIndex: 0,
+    explanation: "Correct: irremovability primarily protects the public by shielding judges from external pressure, thereby safeguarding independent adjudication. It does not place judges above the law or create blanket private immunity.",
+    theme: "Justice Organization",
+    difficulty: "medium"
+  },
+  {
+    prompt: "[Medium] In disciplinary matters concerning magistrats du siege, the role of the CSM is best described as:",
+    choices: ["Purely symbolic", "Constitutionally framed participation in guarantees of judicial independence", "Subordinate to prefectural instructions", "Equivalent to legislative censure"],
+    answerIndex: 1,
+    explanation: "Correct: the CSM is part of the constitutional architecture ensuring independence and accountability of magistrates. It is not a prefectural body and has no relation to parliamentary censure mechanisms.",
+    theme: "Institutions & Powers",
+    difficulty: "medium"
+  },
+  {
+    prompt: "[Medium] Which principle is most relevant when balancing freedom of expression of magistrates and confidence in justice?",
+    choices: ["Absolute silence in all circumstances", "Proportionality between expression rights and duties of reserve/impartiality", "Automatic criminalization of criticism", "Political majoritarianism"],
+    answerIndex: 1,
+    explanation: "Correct: the balance is based on proportionality: magistrates retain fundamental freedoms but must respect duties tied to impartiality and confidence in justice. Neither absolute silence nor automatic criminalization is the governing standard.",
+    theme: "Public Freedoms",
+    difficulty: "medium"
+  },
+  {
+    prompt: "[Medium] If a reform modifies judicial career management, which constitutional requirement remains central?",
+    choices: ["No consultation ever", "Preservation of guarantees linked to judicial independence", "Primacy of local executive convenience", "Suppression of disciplinary review"],
+    answerIndex: 1,
+    explanation: "Correct: career-management reforms must preserve constitutional guarantees of independence and fair process. Administrative convenience cannot override foundational rule-of-law protections.",
+    theme: "Justice Organization",
+    difficulty: "medium"
+  },
+  {
+    prompt: "[Medium] The difference between accountability of magistrates and subordination of magistrates is that accountability:",
+    choices: ["Operates through legal and disciplinary frameworks without removing decisional independence", "Allows direct political orders on judgments", "Means judges can be removed at will", "Eliminates adversarial procedure"],
+    answerIndex: 0,
+    explanation: "Correct: accountability is compatible with independence when exercised through lawful procedures and guarantees. It is fundamentally different from hierarchical control over judicial decisions.",
+    theme: "Justice Organization",
+    difficulty: "medium"
+  },
+  {
+    prompt: "[Medium] In status-of-magistrates discussions, why are rights of defense repeatedly emphasized?",
+    choices: ["Because they are optional in disciplinary cases", "Because they ensure legitimacy and fairness of disciplinary outcomes", "Because they only apply to civil servants outside justice", "Because they replace judicial review"],
+    answerIndex: 1,
+    explanation: "Correct: rights of defense are central to fairness and legitimacy, especially in disciplinary contexts. They are not optional and do not replace judicial review mechanisms.",
+    theme: "Public Freedoms",
+    difficulty: "medium"
+  },
+  {
+    prompt: "[Hard] Which statement best reflects the constitutional logic of combining independence and discipline of judges?",
+    choices: ["Discipline is incompatible with independence", "Independence excludes all external control", "Independence and discipline are reconciled through legally framed procedures protecting impartial adjudication", "Only political bodies may discipline judges"],
+    answerIndex: 2,
+    explanation: "Correct: constitutional design reconciles independence with responsibility through legal guarantees, due process, and institutional checks (not political command). The objective is impartial justice, not impunity.",
+    theme: "Justice Organization",
+    difficulty: "hard"
+  },
+  {
+    prompt: "[Hard] In separation-of-powers terms, what is the main risk if executive authority can freely transfer or sanction sitting judges for decisions?",
+    choices: ["Increased legal certainty", "Erosion of impartiality and right to an independent tribunal", "Better adversarial debate", "Expansion of parliamentary initiative"],
+    answerIndex: 1,
+    explanation: "Correct: free executive control over judicial careers for case outcomes would undermine impartiality and violate the right to an independent tribunal, core to constitutional and convention standards.",
+    theme: "Public Freedoms",
+    difficulty: "hard"
+  },
+  {
+    prompt: "[Hard] Why is the institutional role of the CSM often analyzed together with Article 64?",
+    choices: ["Because both concern electoral boundaries", "Because both contribute to the constitutional guarantee of judicial independence", "Because the CSM replaces all courts", "Because Article 64 governs local taxation"],
+    answerIndex: 1,
+    explanation: "Correct: Article 64 sets the constitutional guarantee of independence, and the CSM operationalizes part of that guarantee through appointments and discipline safeguards. The other options are unrelated.",
+    theme: "Institutions & Powers",
+    difficulty: "hard"
+  },
+  {
+    prompt: "[Hard] In evaluating a disciplinary regime for magistrates, which criterion is most aligned with rule-of-law standards?",
+    choices: ["Political expediency", "Predictable legal grounds, adversarial rights, and reviewability", "Media approval ratings", "Automatic sanctions without hearing"],
+    answerIndex: 1,
+    explanation: "Correct: a lawful disciplinary framework requires clear legal grounds, rights of defense, and effective review. Political or media pressures cannot replace legal guarantees.",
+    theme: "Justice Organization",
+    difficulty: "hard"
+  },
+  {
+    prompt: "[Hard] Which proposition best captures the difference between independence of the bench and functional policy coordination in prosecution services?",
+    choices: ["No difference: both are identical in status", "Bench independence protects adjudication, while prosecution organization may involve policy coordination within legal limits", "Bench judges are subordinate to local mayors", "Prosecution may ignore legality for efficiency"],
+    answerIndex: 1,
+    explanation: "Correct: the bench and prosecution have distinct constitutional positions; adjudicative independence remains non-negotiable for judges, while prosecution policy coordination exists but remains legally framed and reviewable.",
+    theme: "Justice Organization",
+    difficulty: "hard"
+  },
+  {
+    prompt: "[Hard] If a statutory reform weakens guarantees against arbitrary career measures targeting judges, the strongest constitutional objection is that it may:",
+    choices: ["Improve judicial neutrality", "Undermine independence and effective protection of litigants' rights", "Expand local self-government", "Reduce constitutional hierarchy issues"],
+    answerIndex: 1,
+    explanation: "Correct: weakening safeguards against arbitrary career measures threatens judicial independence and, by extension, litigants' right to a fair and impartial tribunal. This is a structural constitutional concern.",
+    theme: "Public Freedoms",
+    difficulty: "hard"
+  },
+  {
+    prompt: "[Easy] In judicial ethics, impartiality primarily requires the judge to:",
+    choices: ["Favor the public prosecutor", "Remain neutral between parties", "Follow media pressure", "Apply only local customs"],
+    answerIndex: 1,
+    explanation: "Correct: impartiality means the judge must remain neutral and decide only on law and facts. Favoring one side, including prosecution, conflicts with fair trial guarantees.",
+    theme: "Justice Organization",
+    difficulty: "easy"
+  },
+  {
+    prompt: "[Easy] The duty of reserve expected from magistrates mainly aims to:",
+    choices: ["Prevent all private life", "Protect confidence in judicial neutrality", "Replace freedom of expression entirely", "Avoid publication of statutes"],
+    answerIndex: 1,
+    explanation: "Correct: duty of reserve seeks to preserve public confidence in neutral justice while coexisting with fundamental freedoms. It does not abolish private life or constitutional rights.",
+    theme: "Public Freedoms",
+    difficulty: "easy"
+  },
+  {
+    prompt: "[Easy] Which concept best describes the prohibition of arbitrary removal of judges from their post?",
+    choices: ["Parliamentary immunity", "Irremovability", "Ministerial countersignature", "Referendum sovereignty"],
+    answerIndex: 1,
+    explanation: "Correct: irremovability protects judges against arbitrary transfer or removal and supports independence of adjudication.",
+    theme: "Justice Organization",
+    difficulty: "easy"
+  },
+  {
+    prompt: "[Easy] In status law discussions, disciplinary sanctions against magistrates must be:",
+    choices: ["Secret and discretionary", "Legally grounded and procedurally framed", "Declared by popular vote", "Automatically criminal"],
+    answerIndex: 1,
+    explanation: "Correct: sanctions require a legal basis and fair procedure with rights of defense. Pure discretion is incompatible with rule-of-law standards.",
+    theme: "Justice Organization",
+    difficulty: "easy"
+  },
+  {
+    prompt: "[Easy] The right to an independent tribunal mainly protects:",
+    choices: ["Only judges", "Litigants and fair adjudication", "Only the executive", "Only Parliament"],
+    answerIndex: 1,
+    explanation: "Correct: institutional safeguards exist above all to protect litigants' right to fair adjudication by an independent and impartial tribunal.",
+    theme: "Public Freedoms",
+    difficulty: "easy"
+  },
+  {
+    prompt: "[Easy] Which body is constitutionally linked to guarantees of magistrates' careers and discipline?",
+    choices: ["CSM", "Cour des comptes", "CESE", "Defender of Rights only"],
+    answerIndex: 0,
+    explanation: "Correct: the CSM is constitutionally connected to career and disciplinary guarantees for magistrates as part of judicial independence safeguards.",
+    theme: "Institutions & Powers",
+    difficulty: "easy"
+  },
+  {
+    prompt: "[Medium] A disciplinary procedure that withholds all allegations from the magistrate would chiefly violate:",
+    choices: ["Budgetary sincerity", "Rights of defense", "Parliamentary initiative", "Reciprocity of treaties"],
+    answerIndex: 1,
+    explanation: "Correct: rights of defense require awareness of allegations and an effective opportunity to respond.",
+    theme: "Public Freedoms",
+    difficulty: "medium"
+  },
+  {
+    prompt: "[Medium] Why is predictability of disciplinary standards important for judicial status?",
+    choices: ["It enables arbitrary enforcement", "It reduces legal certainty", "It prevents ad hoc pressure and supports independence", "It replaces appeal courts"],
+    answerIndex: 2,
+    explanation: "Correct: clear standards reduce arbitrariness and protect magistrates from ad hoc pressure, reinforcing independence and legal certainty.",
+    theme: "Justice Organization",
+    difficulty: "medium"
+  },
+  {
+    prompt: "[Medium] In constitutional reasoning, accountability of judges is legitimate when it is:",
+    choices: ["Politically commanded", "Structured by law with guarantees", "Based on polling data", "Detached from any review"],
+    answerIndex: 1,
+    explanation: "Correct: accountability must be legal, reviewable, and accompanied by procedural guarantees, not subordinated to political command.",
+    theme: "Institutions & Powers",
+    difficulty: "medium"
+  },
+  {
+    prompt: "[Medium] If public authorities publish comments on pending cases that pressure judges, the main constitutional concern is:",
+    choices: ["Faster justice", "Risk to independence and impartiality", "Increase in legislative competence", "Automatic nullity of all judgments"],
+    answerIndex: 1,
+    explanation: "Correct: external pressure on pending adjudication threatens independence and impartiality, core dimensions of fair trial guarantees.",
+    theme: "Public Freedoms",
+    difficulty: "medium"
+  },
+  {
+    prompt: "[Medium] A balanced status regime for magistrates combines independence with:",
+    choices: ["Total impunity", "Clear duties and fair disciplinary responsibility", "Subordination to local executives", "Elimination of appeals"],
+    answerIndex: 1,
+    explanation: "Correct: a sound regime reconciles decisional independence with clear duties enforced through fair procedures.",
+    theme: "Justice Organization",
+    difficulty: "medium"
+  },
+  {
+    prompt: "[Medium] Which statement best reflects institutional logic of the parquet in a rule-of-law system?",
+    choices: ["Pure political agency", "Legal mission in public prosecution under legal constraints", "Body replacing courts", "Authority immune from review"],
+    answerIndex: 1,
+    explanation: "Correct: prosecution services operate within legal constraints and judicial oversight; they do not replace courts or escape review.",
+    theme: "Justice Organization",
+    difficulty: "medium"
+  },
+  {
+    prompt: "[Hard] Which formulation best captures why independence of judges is considered an objective constitutional guarantee?",
+    choices: ["It exists to privilege judges personally", "It secures impartial adjudication for all litigants", "It allows courts to ignore statutes", "It removes need for procedural law"],
+    answerIndex: 1,
+    explanation: "Correct: judicial independence is an institutional guarantee for litigants and rule of law, not a personal privilege.",
+    theme: "Justice Organization",
+    difficulty: "hard"
+  },
+  {
+    prompt: "[Hard] In assessing compatibility of disciplinary rules with constitutional standards, the strongest test is whether rules are:",
+    choices: ["Politically efficient", "Predictable, proportionate, and adversarially applied", "Confidential and unreviewable", "Delegated to media authorities"],
+    answerIndex: 1,
+    explanation: "Correct: constitutionally robust discipline requires legal predictability, proportionality, rights of defense, and reviewability.",
+    theme: "Public Freedoms",
+    difficulty: "hard"
+  },
+  {
+    prompt: "[Hard] If a law allowed executive transfer of judges without objective criteria or review, the most direct objection is:",
+    choices: ["It reinforces separation of powers", "It weakens independence and fair-trial guarantees", "It improves constitutional review speed", "It is required by Article 89"],
+    answerIndex: 1,
+    explanation: "Correct: arbitrary executive transfer power undermines structural judicial independence and the right to an impartial tribunal.",
+    theme: "Institutions & Powers",
+    difficulty: "hard"
+  },
+  {
+    prompt: "[Hard] Why does constitutional doctrine insist on institutional distance between adjudication and case-by-case political directives?",
+    choices: ["To preserve democratic elections", "To protect neutrality of judgment and equality before justice", "To reduce written reasoning", "To abolish prosecution"],
+    answerIndex: 1,
+    explanation: "Correct: adjudication must remain neutral and shielded from case-specific political directives to preserve equality before justice and trust in courts.",
+    theme: "Justice Organization",
+    difficulty: "hard"
+  },
+  {
+    prompt: "[Hard] In a status reform dispute, which combination most strongly supports constitutionality?",
+    choices: ["Broad discretion, no hearing, no appeal", "Clear legal grounds, rights of defense, and independent review", "Executive-only decision with no motivation", "Automatic sanctions based on statistics"],
+    answerIndex: 1,
+    explanation: "Correct: constitutionality is strengthened when reforms preserve legal clarity, adversarial rights, and independent review mechanisms.",
+    theme: "Public Freedoms",
+    difficulty: "hard"
+  },
+  {
+    prompt: "[Hard] The most accurate distinction between independence and irresponsibility of judges is that independence:",
+    choices: ["Excludes all sanctions", "Protects decisional freedom while allowing legally framed responsibility", "Forbids any ethical duties", "Eliminates disciplinary institutions"],
+    answerIndex: 1,
+    explanation: "Correct: independence protects decisional freedom from pressure, but judges remain subject to legally framed duties and disciplinary responsibility.",
+    theme: "Justice Organization",
+    difficulty: "hard"
   }
 ];
 
@@ -769,6 +1058,14 @@ const LATEST_CONTENT_UPDATE = {
     "Public Freedoms",
     "Norm Hierarchy & Review",
     "State Organization"
+  ]
+};
+const THIRD_PART_CONTENT_UPDATE = {
+  addedCount: 36,
+  themes: [
+    "Justice Organization",
+    "Institutions & Powers",
+    "Public Freedoms"
   ]
 };
 
@@ -799,6 +1096,7 @@ const attemptListEl = document.getElementById("attempt-list");
 const badgesOverviewEl = document.getElementById("badges-overview");
 const badgesGridEl = document.getElementById("badges-grid");
 const updateAlertEl = document.getElementById("update-alert");
+const updateAlert3El = document.getElementById("update-alert-3");
 
 let selectedQuestions = [];
 let currentIndex = 0;
@@ -864,6 +1162,9 @@ const BADGE_DEFS = [
   { id: "normandy_sr_droit",       icon: "🛸", name: "Normandy SR-Droit",                  desc: "Answer 300 questions correctly (total).",               check: (s) => s.totalCorrect >= 300 },
   { id: "pip_boy_perfect",         icon: "📟", name: "Pip-Boy Perfect Score",               desc: "Score 100% on 4 different themes.",                     check: (s) => s.perfectThemeCount >= 4 },
   { id: "fade_to_droit",           icon: "🌀", name: "Fade to Droit",                      desc: "Complete a quiz after midnight.",                        check: (s) => s.afterMidnight },
+  { id: "statut_streak",            icon: "⚖️", name: "Statut Streak",                       desc: "Reach a 30-day streak.",                                 check: (s) => s.streak >= 30 },
+  { id: "haute_cour_mastery",       icon: "🏛️", name: "Haute Cour Mastery",                  desc: "Score 100% on 5 different themes.",                      check: (s) => s.perfectThemeCount >= 5 },
+  { id: "troisieme_titan",          icon: "📚", name: "Troisième Titan",                     desc: "Answer 400 questions correctly (total).",                check: (s) => s.totalCorrect >= 400 },
 ];
 
 /* ── Spaced Repetition Storage ─────────────────────────── */
@@ -973,6 +1274,10 @@ function renderUpdateAlert() {
   }
 
   updateAlertEl.textContent = `Update: ${LATEST_CONTENT_UPDATE.addedCount} new questions added in ${LATEST_CONTENT_UPDATE.themes.join(", ")}.`;
+
+  if (updateAlert3El) {
+    updateAlert3El.textContent = `New: ${THIRD_PART_CONTENT_UPDATE.addedCount} additional questions from Troisieme Partie (statut), focused on ${THIRD_PART_CONTENT_UPDATE.themes.join(", ")}.`;
+  }
 }
 
 /* ── Badge System ──────────────────────────────────────── */
